@@ -1,0 +1,118 @@
+$font-flavor: 'Abril Fatface', cursive;
+$font-mono: 'Anonymous Pro', monospace;
+$font-main: 'Darker Grotesque', sans-serif;
+$color-dark: #363636;
+$color-light: #d1c8a6;
+$color-brown: #76564a;
+$color-red: #c0422a;
+$color-playbutton: $color-dark;
+
+h1 {
+  font-family: $font-flavor;
+}
+
+p {
+  font-family: $font-main;
+}
+
+section.hero {
+  min-height: 20vh;
+  background-color: $color-dark;
+  display: grid;
+  justify-content: center;
+  align-content: end;
+  text-align: center;
+  padding-bottom: 0.5rem;
+
+  & h1 {
+    color: $color-red;
+    font-size: 4em;
+  }
+}
+
+section.body {
+  padding-top: 2rem;
+  min-height: 80vh;
+  background-color: $color-light;
+  display: grid;
+  justify-content: center;
+  row-gap: 3rem;
+
+  & .container .video {
+    display: flex;
+    background-color: $color-red;
+    background-size: cover;
+    border-radius: 5px;
+    background-position: center;
+
+    justify-content: center;
+    align-items: center;
+
+    & i {
+      cursor: pointer;
+      color: $color-playbutton;
+      font-size: 2em;
+      opacity: 0.6;
+
+      transition-property: color, font-size, opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    & i:hover {
+      opacity: 0.9;
+      font-size: 3em;
+      color: $color-red;
+    }
+  }
+
+  & .container .text {
+    padding-left: 0.5em;
+  }
+}
+
+footer {
+  min-height: 5vh;
+  background-color: $color-light;
+}
+
+// DESKTOP
+@media screen and (min-width: 700px) {
+  section.body {
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    & .container {
+      width: 80%;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      height: 100%;
+      justify-content: center;
+      justify-self: center;
+      align-items: center;
+
+      & .text {
+        justify-self: center;
+        & h1 {
+          font-size: 1.2rem;
+        }
+        & p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// MOBILE
+@media screen and (max-width: 700px) {
+  section.body {
+    & .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      & .text {
+        align-self: center;
+      }
+    }
+  }
+}
