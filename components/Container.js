@@ -20,8 +20,8 @@ export default class Container extends Component {
     const styles = {
       bgImg: {
         backgroundImage: `url(${thumb.url})`,
-        height: '130px',
-        width: '240px',
+        // height: '130px',
+        // width: '240px',
         // height: thumb.height,
         // width: thumb.width,
       },

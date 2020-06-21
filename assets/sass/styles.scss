@@ -5,7 +5,7 @@ $color-dark: #363636;
 $color-light: #d1c8a6;
 $color-brown: #76564a;
 $color-red: #c0422a;
-$color-playbutton: $color-dark;
+$color-playbutton: $color-light;
 
 h1 {
   font-family: $font-flavor;
@@ -22,7 +22,7 @@ section.hero {
   justify-content: center;
   align-content: end;
   text-align: center;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 
   & h1 {
     color: $color-red;
@@ -48,11 +48,13 @@ section.body {
     justify-content: center;
     align-items: center;
 
+    transition: box-shadow 0.25s ease-in-out;
+
     & i {
       cursor: pointer;
       color: $color-playbutton;
       font-size: 2em;
-      opacity: 0.6;
+      opacity: 0.7;
 
       transition-property: color, font-size, opacity;
       transition-duration: 0.2s;
@@ -64,6 +66,10 @@ section.body {
       font-size: 3em;
       color: $color-red;
     }
+  }
+
+  & .container .video:hover {
+    box-shadow: 10px 10px rgba(54, 54, 54, 0.2);
   }
 
   & .container .text {
@@ -81,14 +87,18 @@ footer {
   section.body {
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     & .container {
-      width: 80%;
+      height: 120px;
+      width: 360px;
       padding: 0 1rem;
       display: grid;
       grid-template-columns: 3fr 1fr;
-      height: 100%;
       justify-content: center;
       justify-self: center;
       align-items: center;
+
+      & .video {
+        min-height: -webkit-fill-available;
+      }
 
       & .text {
         justify-self: center;
@@ -108,10 +118,14 @@ footer {
   section.body {
     & .container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 1fr;
+      padding: 0 1rem;
+      height: 200px;
+      direction: rtl;
 
       & .text {
         align-self: center;
+        padding: 1rem;
       }
     }
   }
